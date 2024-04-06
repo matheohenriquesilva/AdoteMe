@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADO.TE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'usuarios/css/cadastro.css' %}" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 bg-side">
+                    <div class='header'>
+                        <img src="{% static 'usuarios/img/logo_adote.png' %}" width="9%">
+                        <span class="font-logo">Seja Bem Vindo!</span>
+                    </div>
+
+                    <div class="body-form">
+                        {% if messages %}
+                            <br>
+                            {% for message in messages %}
+                                <div class="alert {{message.tags}}">
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <h2>Menu</h2>
+                        <hr>
+                        <a href="{% url 'cadastro' %}" class="">CADASTRA-SE</a>
+                        <hr>
+                        <a href="{% url 'login' %}" class="">FAÇA LOGIN</a>
+                        <hr>
+                        <a href="{% url 'dashboard' %}" class="">NOSSAS ADOÇÕES</a>
+                        <hr>
+                        <a href="{% url 'guia' %}" class="">GUIA DE ADOÇÃO</a>
+                        <hr>
+                        <a href="{% url 'creditos' %}" class="">CRÉDITOS</a>
+                        <hr>
+                        <a href="{% url 'admin' %}" class="">ADMINISTRAÇÃO</a>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="side-logo">
+                        <img class="logo-margin-top" src="{% static 'usuarios/img/logo_adote.png' %}" width="55%">
+                        <h1>ADO.TE</h1>
+                        <p>Nos ajude a salvar vidas.</p>
+                        <h6>Lorem ipsum dolor sit amet. Est reprehenderit modi aut esse aliquam eos
+                            galisum dolorem eum quia asperiores et odio consequatur ea vitae voluptatem
+                            est voluptas odio.</h6>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
